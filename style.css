@@ -42,7 +42,9 @@ body>main { margin-top: -340px; }
 body>main .downloadbutton-wrapper { text-align: center; }
 body>main .downloadbutton { font-size: 20px; line-height: 26px; display: inline-block; padding: 25px 55px; border: 1px solid #CDCFD1; background-color: #EFEFEF; color: #464D59; border-radius: 3px; font-weight: bold; margin: 32px 0; transition: box-shadow 0.2s; }
 body>main .downloadbutton:hover { box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5); }
+
 .selfIntroduction { max-width: 1100px; margin-left: auto; margin-right: auto; text-align: center; font-family: "仿宋"; line-height: 40px; font-size: 25px; }
+
 section.skills, section.portfolio { max-width: 1100px; margin-left: auto; margin-right: auto; }
 section.skills>h2, section.portfolio>h2 { text-align: center; color: #3d4451; font-size: 30px; line-height: 1.2; font-weight: 600; margin-top: 50px; margin-bottom: 30px; }
 section.skills>ol { background-color: white; box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5); padding: 42px 50px 10px; }
