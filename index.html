@@ -201,7 +201,7 @@
 			aTags[i].onmouseenter = function(x){
 				let a = x.currentTarget
 				let brother = a.nextSibling
-				while(brother.nodetype===3){
+				while(brother.tagName !== 'ul'){
 					brother = brother.nextSibling
 				}
 				console.log(brother)
