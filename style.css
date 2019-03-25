@@ -23,7 +23,7 @@ h2, h3, h4, h5, h6 { font-weight: normal; }
     top: 100%;
 }
 .topNavBar .submenu > li{
-    white-space: nowrap;//宽度不换行
+    white-space: nowrap; /* 宽度不换行 */
 }
 .topNavBar .submenu.active{
     display: block;
