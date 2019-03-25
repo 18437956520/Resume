@@ -17,33 +17,10 @@ h2, h3, h4, h5, h6 { font-weight: normal; }
 .topNavBar nav>ul>li>a:hover::after {content: ''; display: block; position: absolute; top: 100%; left: 0; width: 100%; background-color: #e06567; height: 3px; animation: menuSlide 0.5s;}
 .topNavBar nav>ul>li.active>a::after {content: ''; display: block; position: absolute; top: 100%; left: 0; width: 100%; background-color: #e06567; height: 3px; animation: menuSlide 0.5s;}
 @keyframes menuSlide{ 0%{ width: 0; } 100%{ width: 100%; } }
-.topNavBar .submenu{
-    display: none; 
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background-color: white;
-    color: #3d4451;
-    padding: 5px 10px;
-    margin-top: 3px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-.topNavBar .submenu > li{
-    white-space: nowrap; /* 宽度不换行 */
-}
-.topNavBar li.active .submenu{
-    display: block;
-
-    animation: submenuSlide 0.5s;
-}
-@keyframes submenuSlide{
-    0%{
-        margin-right: 100%;
-    }
-    100%{
-        margin-right: 0%;
-    }
-}
+.topNavBar .submenu{ display: none; position: absolute; right: 0; top: 100%; background-color: white; color: #3d4451; padding: 5px 10px; margin-top: 3px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); } 
+.topNavBar .submenu > li{ white-space: nowrap; cursor: pointer;/* 宽度不换行 */ }
+.topNavBar li.active .submenu{ display: block; animation: submenuSlide 0.5s; }
+@keyframes submenuSlide{ 0%{ margin-right: 100%; } 100%{ margin-right: 0%; } }
 .topNavBar .logo { padding-top: 4px; padding-bottom: 5px; font-weight: bold; font-size: 24px; }
 .topNavBar .logo .rs { margin-right: 4px; color: #E8676B; }
 .topNavBar .logo .card { color: #9A9DA2; }
@@ -83,7 +60,8 @@ section.skills>ol>li:nth-child(even) { float: right; }
 section.skills h3 { font-size: 18px; line-height: 1.1; padding-right: 40px; }
 section.skills .progressBar { height: 5px; background-color: #FAE1E1; border: 3px; margin: 8px 0 40px 0; }
 section.skills .progressBar .progress { background-color: #E8676B; height: 100%; width: 70%; }
-section.portfolio { text-align: center; padding-top: 40px; padding-bottom: 150px; }
+
+section.portfolio { text-align: center; margin-bottom: 800px; }
 section.portfolio>nav { text-align: center; margin-top: 20px; }
 section.portfolio>nav>ol { text-align: center; display: inline-block; vertical-align: top; }
 section.portfolio>nav>ol>li { float: left; font-size: 120%; font-weight: bold; font-family: "宋体"; cursor: pointer; }
