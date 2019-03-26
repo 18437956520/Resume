@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
-<html>
-
+<html lang="zh-hans">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>YH的简历</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="//at.alicdn.com/t/font_1070528_egfy16czjq7.js"></script>
@@ -187,23 +189,27 @@
 	<script>
 		setTimeout(function(){siteWelcome.classList.remove('active')},1000)
 
+		let specialTags = document.querySelectorAll('[data-x]')
+		for(let i=0; i<specialTags.length; i++){
+			specialTags[i].classList.add('offset')
+		}
+		setTimeout(function(){
+			findClosest()
+		},1000)
 		window.onscroll = function(x){
 			if(window.scrollY > 0){ topNavBar.classList.add('sticky') }
 			else{ topNavBar.classList.remove('sticky') } 
-			
-
+			findClosest()
+		}	
+			function findClosest(){
 			let specialTags = document.querySelectorAll('[data-x]')
 			let minIndex = 0
 			for(let i=1; i<specialTags.length; i++){
 				if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY))
-					minIndex = i
-				
+					minIndex = i	
 			}
-			for(let i=0; i<specialTags.length; i++){
-				specialTags[i].classList.remove('highlight')
-			}
-			specialTags[minIndex].classList.add('highlight')
 
+			specialTags[minIndex].classList.remove('offset')
 			let id = specialTags[minIndex].id
 			let a = document.querySelector('a[href="#'+ id +'"]')
 			let li = a.parentNode
@@ -213,6 +219,8 @@
 			}
 			li.classList.add('highlight')
 		}
+		
+			
 			
 		let liTags = document.getElementsByClassName('menuTigger')
 		for(let i=0; i<liTags.length; i++){
