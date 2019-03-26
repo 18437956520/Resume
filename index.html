@@ -189,33 +189,37 @@
 		setTimeout(function(){siteWelcome.classList.remove('active')},1000)
 
 		window.onscroll = function(xxx){
-			if(window.scrollY > 0){
-				topNavBar.classList.add('sticky')
-			}else{
-				topNavBar.classList.remove('sticky')
-			}
-		}
+			if(window.scrollY > 0){ topNavBar.classList.add('sticky') }
+			else{ topNavBar.classList.remove('sticky') } }
 
 		let liTags = document.getElementsByClassName('menuTigger')
 		for(let i=0; i<liTags.length; i++){
-			liTags[i].onmouseenter = function(x){
-				x.currentTarget.classList.add('active')
-			}
-			liTags[i].onmouseleave = function(x){
-				x.currentTarget.classList.remove('active')
-			}
-		}
+			liTags[i].onmouseenter = function(x){ x.currentTarget.classList.add('active') }
+			liTags[i].onmouseleave = function(x){ x.currentTarget.classList.remove('active') } }
 
 		let aTags = document.querySelectorAll('nav>ul>li>a')
 		for(let i=0; i<aTags.length; i++){
 			aTags[i].onclick = function(x){
 				x.preventDefault()
-				let a = x.currentTarget
-				let href = a.getAttribute('href')
-				let element = document.querySelector(href)
-				let top = element.offsetTop
-				window.scrollTo(0, top-100)
-				console.log(element)
+				// let a = x.currentTarget
+				// let href = a.getAttribute('href')
+				// let element = document.querySelector(href)
+				// let top = element.offsetTop
+				let top = document.querySelector(x.currentTarget.getAttribute('href')).offsetTop
+				let n = 50//一共动n次
+				let duration = 300/n//一共动300ms 一次多少ms
+				let currentTop = window.scrollY//窗口当前距顶部距离
+				let targetTop = top - 90//要到达的位置
+				let distance = (targetTop - currentTop)/n//每一次动多少距离
+				let i = 0
+				let id = setInterval(()=>{
+					if (i===n){
+						window.clearInterval(id)
+						return
+					}
+					i++
+					window.scrollTo(0,currentTop + distance*i)
+				},duration)//终止																																	
 			}
 		}
 	</script>
