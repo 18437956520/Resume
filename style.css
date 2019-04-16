@@ -5,15 +5,8 @@ hr { height: 0; border: none; border-top: 1px solid #DEDEDE; }
 ol, li { list-style: none; } 
 h2, h3, h4, h5, h6 { font-weight: normal; }
 
-
-[data-x].offset{
-    transform: translateY(600px)
-}
-[data-x]{
-    transform: translateY(0px);
-    transition: all 1s;
-}
-
+[data-x].offset{ transform: translateY(600px) }
+[data-x]{ transform: translateY(0px); transition: all 1s; }
 
 .clearfix::after { content: ''; display: block; clear: both; }
 .topNavBar { padding: 20px 0; position: fixed; top: 0; left: 0; width: 100%; transition: all 1s; color: #B7B7B7;}
