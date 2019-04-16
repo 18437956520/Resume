@@ -7,6 +7,7 @@ h2, h3, h4, h5, h6 { font-weight: normal; }
 
 [data-x].offset{ transform: translateY(600px) }
 [data-x]{ transform: translateY(0px); transition: all 1s; }
+
 .clearfix::after { content: ''; display: block; clear: both; }
 .topNavBar { padding: 20px 0; position: fixed; top: 0; left: 0; width: 100%; transition: all 1s; color: #B7B7B7;}
 .topNavBar.sticky{background-color: #fff; padding: 10px 0; z-index: 1; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); color: #3d4451;}
